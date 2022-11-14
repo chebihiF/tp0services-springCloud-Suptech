@@ -1,13 +1,10 @@
 package com.suptech.customer;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
-@Data
+@Getter @Setter
 @Builder
 @Entity @AllArgsConstructor @NoArgsConstructor
 public class Customer {
