@@ -14,10 +14,11 @@ public class FraudCheckService {
     }
 
     public boolean isFraudulentCustomer(Integer customer_id){
+        // Check if customer has ....
         fraudCheckHistoryRepository.save(
                 FraudCheckHistory.builder()
                         .customer_id(customer_id)
-                        .isFraudster(false)
+                        .isFraudster(false) // Metier
                         .createdAt(LocalDateTime.now())
                         .build()
         );
