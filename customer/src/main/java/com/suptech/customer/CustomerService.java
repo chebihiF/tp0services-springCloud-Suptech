@@ -4,6 +4,8 @@ import com.suptech.fraud.FraudCheckResponse;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.List;
+
 @Service
 public class CustomerService {
 
@@ -12,6 +14,11 @@ public class CustomerService {
     public CustomerService(CustomerRepository customerRepository, RestTemplate restTemplate) {
         this.customerRepository = customerRepository;
         this.restTemplate = restTemplate;
+    }
+
+    public List<Customer> getCustomers(){
+        // todo: check if there are customers in DB
+        return customerRepository.findAll();
     }
 
     public void registerCustomer(CustomerRegistrationRequest request) {
